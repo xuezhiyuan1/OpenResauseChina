@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:hint="搜索博客，软件，咨询，问答，找人"/>
+
+    <TextView
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        android:layout_toRightOf="@+id/editText"
+        android:layout_marginLeft="10dp"
+        android:gravity="center_vertical"
+        android:textColor="#000000"
+        android:layout_alignParentRight="true"
+        android:text="取消"/>
+
+
+
+    </RelativeLayout>
+
+    <com.androidkun.PullToRefreshRecyclerView
+        android:id="@+id/recycleView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </com.androidkun.PullToRefreshRecyclerView>
+</LinearLayout>

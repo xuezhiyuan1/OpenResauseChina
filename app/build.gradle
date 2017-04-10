@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+android {
+    compileSdkVersion 25
+    buildToolsVersion "24.0.1"
+    defaultConfig {
+        applicationId "jiyun.com.openresausechina"
+        minSdkVersion 16
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    greendao{
+        schemaVersion 1
+        daoPackage 'jiyun.com.openresausechina'
+        targetGenDir 'src/main/java'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    testCompile 'junit:junit:4.12'
+    compile 'org.greenrobot:greendao:3.2.0'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    /*compi le 'com.github.bumptech.glide:glide:3.7.0'*/
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile 'com.androidkun:pulltorefreshrecyclerview:1.0.6'
+
+    compile('com.thoughtworks.xstream:xstream:1.4.7') {
+        exclude group: 'xmlpull', module: 'xmlpull'
+    }
+
+}
